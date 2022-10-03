@@ -7,12 +7,12 @@ const port = process.env.PORT || 4242;
 app.set('view engine', 'ejs');
 
 // sendFile resend to unknow user page
-app.get('/user/', function (req, res, next) {
+app.get('/name/', function (req, res, next) {
     res.sendFile(path.join(__dirname, '/views/hello_unknow.html'));
 });
 
 //sendFile resend to name with user page
-app.get('/user/:name', function (req, res, next) {
+app.get('/name/:name', function (req, res, next) {
     const name = req.params.name ;
     res.render('hello',{text: name});
 });
