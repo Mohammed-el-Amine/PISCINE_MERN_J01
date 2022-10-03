@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 app.get('/name/:name', function (req, res, next) {
     const name = req.params.name ;
     const age = req.query.age;
-    res.render('index',{text: name,text_1: age});
+    res.render('index',{name: name, age: age});
 });
 app.get('/name/', function (req, res, next) {
     res.sendFile(path.join(__dirname, '/views/hello_unknow.html'));
